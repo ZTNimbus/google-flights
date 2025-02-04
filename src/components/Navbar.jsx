@@ -7,8 +7,8 @@ const baseNavLinkStyle =
 
 function Navbar() {
   return (
-    <header className="flex items-center py-2 px-16 justify-between border-b border-b-white">
-      <div className="flex gap-10 items-center justify-between">
+    <header className="flex items-center py-2 px-5 md:px-16 justify-between border-b border-b-white">
+      <div className="flex gap-2 md:gap-10 items-center justify-between">
         <span className="text-2xl font-semibold antialiased">
           <Link to="/">Google</Link>
         </span>

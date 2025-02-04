@@ -87,7 +87,7 @@ function SearchBox() {
   }
 
   return (
-    <div className="flex flex-col py-4 px-5 gap-5 rounded-lg shadow-lg space-x-20 lg:bg-[#36373b] mx-auto w-full relative">
+    <div className="flex flex-col py-4 px-5 gap-5 w-full rounded-lg shadow-lg space-x-20 lg:bg-[#36373b] mx-auto w-full relative">
       <div className="flex gap-10 w-full">
         <select
           name="trip"

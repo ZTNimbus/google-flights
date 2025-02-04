@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 function HomePage() {
   return (
     <div className="flex items-center justify-center flex-col min-h-[100vh] space-y-14 bg-[#202125]">
-      <h1 className="text-3xl lg:text-6xl antialiased font-semibold tracking-tight">
+      <h1 className="text-4xl text-center md:text-6xl antialiased font-semibold tracking-tight">
         Welcome to Google Flights
       </h1>
 
