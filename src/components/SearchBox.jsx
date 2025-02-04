@@ -9,6 +9,7 @@ import {
 } from "../constants";
 import { useSearchParams } from "react-router-dom";
 import useFlightsStore from "../store/useFlightsStore";
+import { useEffect } from "react";
 
 function SearchBox() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -71,9 +72,6 @@ function SearchBox() {
     if (returnDateToDate <= departureDateToDate)
       return alert("Return date cannot be before departure date.");
 
-    if (returnDateToDate <= departureDateToDate)
-      return alert("Return date cannot be before departure date.");
-
     if (+adult > +MAX_ADULTS || +adult < +MIN_ADULTS)
       return alert("Invalid adults count.");
 
@@ -86,8 +84,10 @@ function SearchBox() {
     getFlights(paramsObject);
   }
 
+  useEffect(() => {}, []);
+
   return (
-    <div className="flex flex-col py-4 px-5 gap-5 w-full rounded-lg shadow-lg space-x-20 lg:bg-[#36373b] mx-auto w-full relative">
+    <div className="flex flex-col py-4 px-5 gap-5 rounded-lg shadow-lg space-x-20 lg:bg-[#36373b] mx-auto w-full relative">
       <div className="flex gap-10 w-full">
         <select
           name="trip"
