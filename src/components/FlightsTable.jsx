@@ -5,19 +5,19 @@ import { useEffect, useState } from "react";
 import { Button } from "@mui/material";
 
 function FlightsTable() {
-  const { departingFlights, returningFlights, tripType, isLoading, error } =
-    useFlightsStore();
-
-  const [flights, setFlights] = useState([]);
+  const {
+    departingFlights,
+    returningFlights,
+    tripType,
+    isLoading,
+    error,
+    apiCallsMade,
+  } = useFlightsStore();
 
   const [showFlightDirection, setShowFlightDirection] = useState("Departing");
 
-  useEffect(() => {
-    const flightsToDirection =
-      showFlightDirection === "Departing" ? departingFlights : returningFlights;
-
-    setFlights(flightsToDirection);
-  }, [showFlightDirection, departingFlights, returningFlights]);
+  const flights =
+    showFlightDirection === "Departing" ? departingFlights : returningFlights;
 
   if (isLoading) return <Loader className="animate-spin mx-auto mt-10" />;
 
@@ -26,7 +26,11 @@ function FlightsTable() {
   if (!flights.length)
     return (
       <div className="mx-auto mt-10">
-        <p className="text-white/75">Your flight results will appear here.</p>
+        <p className="text-white/75">
+          {apiCallsMade > 0
+            ? "No flights found for given search."
+            : "Your flights will appear here."}
+        </p>
       </div>
     );
 

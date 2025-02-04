@@ -62,8 +62,6 @@ function SearchBox() {
     const returnDateToDate = new Date(returnDate);
     const now = new Date();
 
-    console.log(+adult > +MAX_ADULTS);
-
     if (!from || !to || !departureDate)
       return alert("All fields are required.");
 

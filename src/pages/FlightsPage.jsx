@@ -8,7 +8,7 @@ function FlightsPage() {
     <div className="bg-[#202125] min-h-[100vh]">
       <Navbar />
 
-      <main className="lg:px-80 flex flex-col justify-between space-y-15">
+      <main className="lg:px-40 xl:px-80 flex flex-col justify-between space-y-15">
         <FlightsHero />
 
         <SearchBox />

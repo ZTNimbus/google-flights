@@ -20,11 +20,11 @@ function FlightsCard({ flight, bestDeal = false }) {
   return (
     <div className="w-full flex py-3 px-5 items-center gap-5 border justify-between border-white/50 rounded-lg">
       {/*Left Side*/}
-      <div className="flex items-center gap-4 min-w-[100px] lg:min-w-[200px]">
+      <div className="flex items-center gap-5 max-w-[250px] w-full grow lg:min-w-[200px]">
         <img
           src={departureCarrier.logoUrl}
           alt={departureCarrier.name}
-          className="size-7"
+          className="size-7 hidden sm:block"
         />
         <div className="flex gap-1 flex-col">
           <span className="font-semibold">

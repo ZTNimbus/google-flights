@@ -1,13 +1,14 @@
 import { create } from "zustand";
 import axiosInstance from "../lib/axios";
 
-const useFlightsStore = create((set) => {
+const useFlightsStore = create((set, get) => {
   return {
     departingFlights: [],
     returningFlights: [],
     isLoading: false,
     error: "",
     tripType: "",
+    apiCallsMade: 0,
 
     getFlights: async (params) => {
       set({ isLoading: true });
@@ -65,9 +66,11 @@ const useFlightsStore = create((set) => {
           };
         });
 
-        set({ departingFlights, returningFlights });
-
-        console.log(departingFlights, returningFlights);
+        set({
+          departingFlights,
+          returningFlights,
+          apiCallsMade: get().apiCallsMade + 1,
+        });
       } catch (error) {
         console.log("fetch flights error", error);
         set({ error: error.message });
